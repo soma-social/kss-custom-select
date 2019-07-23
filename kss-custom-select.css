@@ -1,0 +1,74 @@
+.kss-custom-select {
+    position: relative;
+    margin: 0 auto;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/*hide the original SELECT element: */
+.kss-custom-select select {
+    display: none;
+}
+
+/*#! wrapper for the selected value*/
+.kss-custom-select .select-selected {
+}
+
+/*#! how items and the selected item are displayed*/
+.kss-custom-select .select-selected,
+.kss-custom-select .select-item {
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+}
+
+
+/* Style the arrow inside the select element: */
+.kss-custom-select .select-selected:after {
+    position: absolute;
+    content: "";
+    right: 30px;
+    width: 0;
+    height: 0;
+    border: 13px solid transparent;
+    border-color: #ccc transparent transparent transparent;
+    transform: translate(50%, 90%);
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.kss-custom-select .select-selected.select-arrow-active:after {
+    border-color: transparent transparent #ccc transparent;
+    top: -4px;
+}
+
+/* Style the drowpdown list (options): */
+.kss-custom-select .select-items {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background-color: #ccc;
+}
+
+.kss-custom-select .select-item:focus,
+.kss-custom-select .select-item:active,
+.kss-custom-select .select-item:hover {
+    background-color: #ddd;
+}
+
+
+/* Hide the items when the select box is closed: */
+.kss-custom-select .select-hide {
+    display: none;
+}
+
+/*#! When open*/
+.kss-custom-select.open {
+    -webkit-border-radius: 6px 6px 0 0;
+    -moz-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+}
+
